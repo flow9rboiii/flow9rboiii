@@ -25,22 +25,8 @@ body a {
 
 html .container,
 body .container {
-  max-width: 950px;
+  width: 950px;
   margin: 0 auto;
-}
-
-@media (max-width: 950px) {
-  html .container,
-  body .container {
-    max-width: 750px;
-  }
-}
-
-@media (max-width: 767px) {
-  html .container,
-  body .container {
-    max-width: none;
-  }
 }
 
 html .wrapper,
@@ -61,26 +47,18 @@ body .title {
   color: #000;
 }
 
-html .header .header__main,
-body .header .header__main {
+html .header__main,
+body .header__main {
   background-color: #000;
-  min-height: 72px;
 }
 
 html .header .header__main li,
 body .header .header__main li {
-  background-color: #000;
   list-style: none;
 }
 
 html .header .main-navigation,
 body .header .main-navigation {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   text-transform: uppercase;
   font-size: 16px;
   line-height: 20px;
@@ -209,8 +187,12 @@ body .main .quality {
 html .main .quality .box,
 body .main .quality .box {
   position: relative;
-  max-width: 300px;
-  margin-left: 10px;
+  -ms-flex-preferred-size: 33.3%;
+      flex-basis: 33.3%;
+  -ms-flex-negative: 1;
+      flex-shrink: 1;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 html .main .quality .box .quality__title,
@@ -219,22 +201,7 @@ body .main .quality .box .quality__title {
   font-weight: bold;
   line-height: 42px;
   text-transform: uppercase;
-  text-align: center;
-}
-
-html .main .quality .box .quality-fast,
-body .main .quality .box .quality-fast {
-  margin-right: 15px;
-}
-
-html .main .quality .box .quality-nice,
-body .main .quality .box .quality-nice {
-  margin-left: 15px;
-}
-
-html .main .quality .box .quality-expensive,
-body .main .quality .box .quality-expensive {
-  margin-right: 8px;
+  margin-left: 35%;
 }
 
 html .main .quality .box .quality__title:before,
@@ -325,14 +292,26 @@ body .main .info .info__box .info__news .info__buttons1 .all-news:focus {
   background-color: #663d15;
 }
 
+html .main .info .info__box .photo2,
+body .main .info .info__box .photo2 {
+  display: none;
+}
+
+html .main .info .info__box .photo3,
+body .main .info .info__box .photo3 {
+  display: block;
+}
+
 html .main .info .info__box .info__photos,
 body .main .info .info__box .info__photos {
-  margin: 50px 80px 0 80px;
+  margin: 50px 80px 0px 80px;
 }
 
 html .main .info .info__box .info__photos .info__photo,
 body .main .info .info__box .info__photos .info__photo {
   border: 7px solid #fff;
+  width: 300px;
+  height: 178px;
 }
 
 html .main .info .info__box .info__photos .info__title,
@@ -345,7 +324,7 @@ body .main .info .info__box .info__photos .info__buttons {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding-top: 50px;
+  margin-top: 50px;
 }
 
 html .main .info .info__box .info__photos .info__buttons .info-button,
@@ -518,7 +497,7 @@ body .main .support__buttons3 .support__button4 {
 html .main .support__buttons3 .support__button4 .support__button5,
 body .main .support__buttons3 .support__button4 .support__button5 {
   position: absolute;
-  left: 110px;
+  left: 40%;
   top: 13px;
 }
 
@@ -678,48 +657,81 @@ body .footer .other .box3 .button__schoolhtml .buttonn:focus {
 
 .modal {
   color: #000;
+  display: none;
   position: fixed;
-  left: 50%;
-  top: 120px;
+  left: 47%;
+  top: 200px;
   background-color: #fff;
   background-image: url("../../img/background-info.png");
   background-repeat: repeat;
   background-position: 0 0;
   -webkit-box-shadow: 0 30px 50px rgba(0, 0, 0, 0.7);
           box-shadow: 0 30px 50px rgba(0, 0, 0, 0.7);
+  text-align: center;
 }
 
-.modal-close {
-  position: absolute;
-  top: 0;
-  right: -34px;
-  width: 22px;
-  height: 22px;
-  font-size: 0;
-  border: 0;
-  background-color: transparent;
-  cursor: pointer;
+.modal .modal__text {
+  font-size: 23px;
 }
 
-.modal-close:before,
-.modal-close:after {
-  content: "";
-  position: absolute;
-  top: 10px;
-  left: 2px;
-  width: 20px;
-  height: 3px;
-  background-color: #d0d0d0;
+.modal .buttonenter {
+  border: none;
+  -webkit-transition-duration: 2s;
+          transition-duration: 2s;
+  font-family: inherit;
+  font-size: 15px;
 }
 
-.modal-close:before {
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
+@-webkit-keyframes bounce {
+  0% {
+    -webkit-transform: translateY(-2000px);
+            transform: translateY(-2000px);
+  }
+  70% {
+    -webkit-transform: translateY(30px);
+            transform: translateY(30px);
+  }
+  90% {
+    -webkit-transform: translateY(-10px);
+            transform: translateY(-10px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
 }
 
-.modal-close:after {
-  -webkit-transform: rotate(-45deg);
-          transform: rotate(-45deg);
+@keyframes bounce {
+  0% {
+    -webkit-transform: translateY(-2000px);
+            transform: translateY(-2000px);
+  }
+  70% {
+    -webkit-transform: translateY(30px);
+            transform: translateY(30px);
+  }
+  90% {
+    -webkit-transform: translateY(-10px);
+            transform: translateY(-10px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+.modal-show {
+  display: block;
+  -webkit-animation-name: bounce;
+          animation-name: bounce;
+  -webkit-animation-duration: 0.6s;
+          animation-duration: 0.6s;
+}
+
+.modal-login {
+  width: 450px;
+  margin-left: -230px;
+  padding: 50px 80px;
 }
 
 .support__buttons3 {
@@ -741,7 +753,7 @@ body .footer .other .box3 .button__schoolhtml .buttonn:focus {
 
 .support__buttons3 .support__button4 .support__button5 {
   position: absolute;
-  left: 130px;
+  left: 40%;
   top: 13px;
 }
 
@@ -749,126 +761,4 @@ body .footer .other .box3 .button__schoolhtml .buttonn:focus {
 .support__buttons3 .support__button4:active,
 .support__buttons3 .support__button4:focus {
   background-color: #663d15;
-}
-
-.forgot__password {
-  color: #000;
-  text-decoration: underline;
-}
-
-.modal-login {
-  width: 450px;
-  margin-left: -230px;
-  padding: 50px 80px;
-  display: none;
-}
-
-.modal-login h2 {
-  font-size: 30px;
-  margin-bottom: 23px;
-}
-
-.modal-login p {
-  font-size: 14px;
-}
-
-.modal-login .sign {
-  margin-top: 15px;
-  margin-bottom: 20px;
-}
-
-.modal-login .sign input {
-  display: inherit;
-  font-size: 14px;
-  border: 2px solid #000;
-  padding: 10px 15px;
-  padding-right: 40px;
-  margin-bottom: 10px;
-  width: 100%;
-  font: inherit;
-  outline: none;
-}
-
-.modal-login .sign input:focus,
-.modal-login .sign input:active {
-  border: 2px solid #663d15;
-}
-
-.modal-login .sign .login-icon-user {
-  background-image: url("../../img/svg/user.svg");
-  background-repeat: no-repeat;
-  background-position: 262px center;
-}
-
-.modal-login .sign .login-icon-password {
-  background-image: url("../../img/svg/lock.svg");
-  background-repeat: no-repeat;
-  background-position: 262px center;
-}
-
-.modal__password {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-}
-
-.modal__password .modal__remember {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.modal__password .modal__remember .modal__checkbox {
-  display: none;
-}
-
-.modal__password .modal__text {
-  padding: 0 0 0 15px;
-}
-
-.modal__password .modal__true {
-  display: inline-block;
-  width: 17px;
-  height: 17px;
-  border: 2px solid #000;
-  position: relative;
-  padding: 10px 0 0 0;
-}
-
-.modal__password .modal__true:before,
-.modal__password .modal__true:after {
-  content: "";
-  background-color: #000;
-  position: absolute;
-  top: 5.5px;
-  left: 4%;
-  width: 13px;
-  height: 2px;
-  opacity: 0;
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
-  border-radius: 10px;
-}
-
-.modal__password .modal__true:before {
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
-}
-
-.modal__password .modal__true:after {
-  -webkit-transform: rotate(-45deg);
-          transform: rotate(-45deg);
-}
-
-.modal__password .modal__checkbox:checked + .modal__true:before {
-  opacity: 1;
-}
-
-.modal__password .modal__checkbox:checked + .modal__true:after {
-  opacity: 1;
 }
