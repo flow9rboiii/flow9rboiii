@@ -17,27 +17,30 @@
 	<title>Barbershop BORODINSKI</title>
 </head>
 
+
 <body>
+
 	<div class="wrapper">
+
 		<header class="header">
 			<div class="header__main">
 				<div class="container">
 					<nav class="main-navigation">
 						<ul class="site-navigation">
 							<a href="information.html">
-								<li class="nav-item">Информация</li>
+								<li class="nav-item nav-main">Информация</li>
 							</a>
 							<a href="news.html">
-								<li class="nav-item">Новости</li>
+								<li class="nav-item nav-main">Новости</li>
 							</a>
 							<a href="price-list.html">
-								<li class="nav-item">Прайс-лист</li>
+								<li class="nav-item nav-main">Прайс-лист</li>
 							</a>
 							<a href="shop.html">
-								<li class="nav-item">Магазин</li>
+								<li class="nav-item nav-main">Магазин</li>
 							</a>
 							<a href="contacs.html">
-								<li class="nav-item">Контакты</li>
+								<li class="nav-item nav-main">Контакты</li>
 							</a>
 
 
@@ -62,22 +65,26 @@
 		<main class="main">
 			<div class="container">
 				<section class="quality">
+
 					<div class="box">
-						<h2 class="quality__title quality-fast">Быстро</h2>
+						<h2 class="quality__title">Быстро</h2>
 						<p class="quality__text">МЫ ДЕЛАЕМ СВОЮ РАБОТУ БЫСТРО! ДВА ЧАСА ПРОЛЕТЯТ НЕЗАМЕТНО И ВЫ — СЧАСТЛИВЫЙ
 							ОБЛАДАТЕЛЬ СТИЛЬНОЙ СТРИЖКИ-МИНУТКИ!</p>
 					</div>
+
 					<div class="box">
-						<h2 class="quality__title quality-nice">Круто</h2>
+						<h2 class="quality__title">Круто</h2>
 						<p class="quality__text">ЗАБУДЬТЕ КАК ВЫ СТРИГЛИСЬ РАНЬШЕ. <br>
 							МЫ CДЕЛАЕМИ ИЗ ВАС ЗВЕЗДУ ФУТБОЛА ИЛИ КИНО! <br>
 							ВО ВСЯКОМ СЛУЧАЕ ВНЕШНЕ.</p>
 					</div>
+
 					<div class="box">
-						<h2 class="quality__title quality-expensive">Дорого</h2>
+						<h2 class="quality__title">Дорого</h2>
 						<p class="quality__text">НАШИ МАСТЕРА — ПРОФЕССИОНАЛЫ СВОЕГО ДЕЛА И <br>
 							НЕ МОГУТ СТОИТЬ ДЕШЕВО. К ТОМУ ЖЕ, РАЗВЕ ЦЕНА НЕ ДАЕТ ОПРЕДЕЛЕНЫЙ СТАТУС?</p>
 					</div>
+
 				</section>
 
 				<section class="info">
@@ -102,10 +109,13 @@
 
 						<div class="info__photos">
 							<h2 class="info__title title">ФОТОГАЛЕРЕЯ</h2>
-							<img src="img/barber-show.jpg" alt="barbershop photo" class="info__photo">
+
+							<img src="img/barber-show.jpg" alt="barbershop photo" class="info__photo photo1">
+							<img src="img/barber-shop.png" alt="barbershop photo 2.0" class="info__photo photo2">
+
 							<div class="info__buttons">
-								<a class="info-button back button" href="#"><span class="button1">НАЗАД</span></a>
-								<a class="info-button next button" href="#"><span class="button1">ВПЕРЕД</span></a>
+								<a class="info-button backbutton" href="main.html"> <span class="button1">НАЗАД</span></a>
+								<a class="info-button nextbutton" href="main.html"> <span class="button1">ВПЕРЕД</span></a>
 							</div>
 						</div>
 					</div>
@@ -129,7 +139,7 @@
 						</p>
 						<div class="support__buttons">
 							<a href="https://www.google.com/maps/place/GC+BARBERSHOP/@49.2342056,28.4604356,17z/data=!3m1!4b1!4m5!3m4!1s0x472d5b7cbe72b893:0x31a632f3b7957ef7!8m2!3d49.2342108!4d28.4626278"
-								class="support__button1 button"><span class="support__button2">КАК ПРОЕХАТЬ</span></a>
+								class="support__button1 button-map"><span class="support__button2">КАК ПРОЕХАТЬ</span></a>
 							<a href="contacs.html" class="support__button1 button"><span class="support__button2">ОБРАТНАЯ
 									СВЯЗЬ</span></a>
 						</div>
@@ -246,27 +256,36 @@
 		</footer>
 
 		<section class="modal modal-login">
-			<button class="modal-close">Закрыть</button>
-			<h2>ЛИЧНЫЙ КАБИНЕТ</h2>
-			<p>ВВЕДИТЕ ПОЖАЛУЙСТА СВОЙ ЛОГИН И ПАРОЛЬ</p>
-			<div class="sign">
-				<input type="text" placeholder="ЛОГИН" class="login-icon-user">
-				<input type="password" placeholder="ПАРОЛЬ" class="login-icon-password">
-			</div>
-			<p class="modal__password">
 
-				<label class="modal__remember">
-					<input type="checkbox" class="modal__checkbox">
-					<span class="modal__true"></span>
-					<span class="modal__text">ЗАПОМНИТЕ МЕНЯ</span>
-				</label>
-				<a href="#" class="forgot__password">Я ЗАБЫЛ ПАРОЛЬ!</a>
-			</p>
+			<span class="modal__text">ВАШЫ ДАННЫЕ ОТПРАВЛЕНЫ!</span>
+
 			<div class="support__buttons3">
-				<a href="#" class="support__button4"><span class="support__button5 button">ВОЙТИ</span></a>
+
+				<button href="information.html" class="support__button4 buttonenter">
+					ПРИЙНЯТЬ
+				</button>
+
 			</div>
 		</section>
+		<section class="modal modal-map">
+
+			<span class="modal__text">ВАШЫ ДАННЫЕ ОТПРАВЛЕНЫ!</span>
+
+			<div class="support__buttons3">
+
+				<button href="information.html" class="support__button4 buttonenter">
+					ПРИЙНЯТЬ
+				</button>
+
+			</div>
+		</section>
+
 	</div>
+	<!-- <div class="map">
+		<iframe
+			src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2605.226114033517!2d28.460435615687718!3d49.234202079326074!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x472d5b7cbe72b893%3A0x31a632f3b7957ef7!2sGC%20BARBERSHOP!5e0!3m2!1suk!2sua!4v1643224770138!5m2!1suk!2sua"
+			width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+	</div> -->
 	<script src="js/script.js"></script>
 
 </body>
